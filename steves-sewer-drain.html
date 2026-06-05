@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steve's Affordable Sewer & Drain | St. Louis, MO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #132240;
+    --yellow: #f5c518;
+    --yellow-dark: #d4a800;
+    --rust: #c94a2a;
+    --offwhite: #f0ede6;
+    --gray: #9a9a8e;
+    --text: #1a1a1a;
+    --pipe-color: #2a3f5f;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--offwhite);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--yellow);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--yellow);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .nav-logo span { color: white; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--yellow); }
+
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--navy) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+  }
+  .nav-cta:hover { background: var(--yellow-dark); color: var(--navy) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pipes {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 40px, #fff 40px, #fff 42px),
+      repeating-linear-gradient(90deg, transparent, transparent 80px, #fff 80px, #fff 82px);
+  }
+
+  .hero-content {
+    padding: 4rem 3rem 4rem 5vw;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--rust);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    color: white;
+    line-height: 0.95;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 em {
+    color: var(--yellow);
+    font-style: normal;
+    display: block;
+  }
+
+  .hero-subtitle {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .hero-tagline {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 1rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.9rem 2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+  .hero-phone-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+    background: var(--yellow);
+    padding: 0.85rem 5vw;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 3;
+  }
+  .hero-phone-strip span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+  .hero-phone-strip a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  /* Hero visual side */
+  .hero-visual {
+    position: relative;
+    height: 100%;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+  }
+
+  .hero-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: -3px; left: -3px;
+    right: -3px; bottom: -3px;
+    border: 3px solid var(--yellow);
+    border-radius: 5px;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .hero-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .service-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.8);
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .service-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-card-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin: 1.75rem 0;
+  }
+
+  .guarantee-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .guarantee-item {
+    text-align: center;
+    flex: 1;
+  }
+  .guarantee-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .guarantee-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+    margin-top: 0.25rem;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--rust);
+    padding: 1rem 5vw;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(255,255,255,0.9);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .trust-item svg { width: 18px; height: 18px; fill: rgba(255,255,255,0.7); flex-shrink: 0; }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 5vw; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--navy);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-body {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a4a42;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: white; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+    margin-top: 3rem;
+    background: #d8d4cc;
+    border: 1.5px solid #d8d4cc;
+  }
+
+  .service-card {
+    background: var(--offwhite);
+    padding: 2rem 1.75rem;
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: white; }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 1.25rem;
+    color: var(--rust);
+  }
+
+  .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+    color: #6a6a5e;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── WHY US ── */
+  #why {
+    background: var(--navy);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  #why .section-title { color: white; }
+  #why .section-label { color: var(--yellow); }
+  #why .section-body { color: rgba(255,255,255,0.6); max-width: 100%; }
+
+  .pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .pillar {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .pillar-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--yellow);
+    line-height: 1;
+    min-width: 2.5rem;
+    opacity: 0.35;
+  }
+
+  .pillar-text h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 0.3rem;
+  }
+  .pillar-text p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* Right side stat blocks */
+  .why-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .why-stat {
+    background: rgba(255,255,255,0.04);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .why-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .why-stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+
+  /* ── REVIEWS ── */
+  #reviews { background: var(--offwhite); }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .rating-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stars { display: flex; gap: 4px; }
+  .star { font-size: 1.4rem; color: var(--yellow); }
+
+  .rating-meta {
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    background: #c8c4bc;
+  }
+
+  .review-card {
+    background: white;
+    padding: 2rem;
+  }
+
+  .reviewer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--yellow);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    text-transform: uppercase;
+  }
+
+  .reviewer-meta {
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-top: 1px;
+  }
+
+  .review-stars { display: flex; gap: 2px; margin-bottom: 0.85rem; }
+  .review-stars .star { font-size: 0.9rem; }
+
+  .review-text {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #4a4a42;
+    font-weight: 300;
+  }
+
+  .review-quote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--yellow);
+    line-height: 0.5;
+    margin-bottom: 0.75rem;
+    opacity: 0.4;
+  }
+
+  /* ── CTA ── */
+  #contact {
+    background: var(--yellow);
+    text-align: center;
+    padding: 5rem 5vw;
+  }
+
+  #contact .section-label { color: rgba(10,22,40,0.5); }
+  #contact .section-title { color: var(--navy); margin-bottom: 1rem; }
+  #contact .section-body { color: rgba(10,22,40,0.65); margin: 0 auto 2.5rem; text-align: center; max-width: 500px; }
+
+  .contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-dark {
+    background: var(--navy);
+    color: var(--yellow);
+    padding: 1rem 2.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-dark:hover { background: var(--navy-mid); }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(10,22,40,0.15);
+    padding-top: 2rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .ci-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(10,22,40,0.45);
+  }
+
+  .ci-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .ci-value a { color: var(--navy); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #06101f;
+    padding: 2rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: var(--yellow);
+    letter-spacing: 0.05em;
+  }
+  .footer-logo span { color: rgba(255,255,255,0.4); }
+
+  footer p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-visual { display: none; }
+    .hero-phone-strip { right: 0; }
+    .hero-content { padding: 3rem 5vw 6rem; }
+
+    #why { grid-template-columns: 1fr; }
+    .why-stats { margin-top: 2rem; }
+
+    nav .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .reviews-header { flex-direction: column; align-items: flex-start; }
+    .trust-bar { gap: 1.5rem; justify-content: flex-start; padding: 1.25rem 5vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Steve's <span>Affordable</span><br>Sewer & Drain</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Steve's</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pipes"></div>
+  <div class="hero-content">
+    <div class="hero-badge">St. Louis, MO — Licensed & Insured</div>
+    <h1>Drains<br>Fixed<br><em>Right.</em></h1>
+    <p class="hero-subtitle">Sewer · Drain · Plumbing</p>
+    <p class="hero-tagline">Honest diagnostics. Fair pricing. No nonsense. Steve and his crew have been keeping St. Louis flowing for years — from stubborn clogs to full sewer line inspections.</p>
+    <div class="hero-actions">
+      <a href="tel:3148823090" class="btn-primary">Call (314) 882-3090</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <h3>What We Handle</h3>
+      <ul class="service-list">
+        <li>Clogged & slow drains</li>
+        <li>Main sewer line issues</li>
+        <li>Camera inspection & diagnosis</li>
+        <li>Hydro-jetting & snaking</li>
+        <li>Basement & floor drains</li>
+        <li>Kitchen & bathroom plumbing</li>
+        <li>Free estimates & honest advice</li>
+      </ul>
+      <hr class="hero-card-divider">
+      <div class="guarantee-row">
+        <div class="guarantee-item">
+          <div class="guarantee-num">★4.3</div>
+          <div class="guarantee-label">Google Rating</div>
+        </div>
+        <div class="guarantee-item">
+          <div class="guarantee-num">100%</div>
+          <div class="guarantee-label">Honest<br>Estimates</div>
+        </div>
+        <div class="guarantee-item">
+          <div class="guarantee-num">STL</div>
+          <div class="guarantee-label">Local &<br>Trusted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-phone-strip">
+    <span>Call Us</span>
+    <a href="tel:3148823090">(314) 882-3090</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Licensed & Insured
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Prompt & On-Time
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Affordable & Transparent
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Knowledgeable & Friendly
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-body">From a stubborn kitchen clog to a full sewer line diagnosis, we bring the same honest approach to every job. No upsells. No surprises.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/>
+      </svg>
+      <h3>Drain Cleaning</h3>
+      <p>Slow or completely blocked drains cleared fast. Kitchen, bathroom, floor drains — we handle it all with professional-grade equipment.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/>
+      </svg>
+      <h3>Sewer Line Service</h3>
+      <p>Main line backups and blockages cleared. We diagnose the root cause so you're not dealing with the same problem again in six months.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <h3>Camera Inspection</h3>
+      <p>See exactly what's going on inside your pipes. Video inspection lets us diagnose problems accurately — no guesswork, no unnecessary digging.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+      <h3>Hydro-Jetting</h3>
+      <p>High-pressure water jetting blasts away grease, scale, and debris that snaking alone can't touch. Great for recurring clogs and preventive maintenance.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <h3>Basement Drains</h3>
+      <p>Basement floor drains are prone to buildup and backup. We clear them out and check for issues before they become bigger problems.</p>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <h3>Free Diagnostics & Advice</h3>
+      <p>Sometimes the best service is honest information. We'll tell you exactly what's going on — even if it means saving you money by not doing unnecessary work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div>
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">We Do It Right,<br>Not Just Fast</h2>
+    <p class="section-body">Steve and his team have built their reputation on being straight with people. They show up when they say they will, explain what's wrong in plain language, and charge fair prices.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-text">
+          <h4>Honest Diagnosis First</h4>
+          <p>We tell you what the problem actually is — even if that means advising you don't need expensive repairs.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-text">
+          <h4>Professional & Accommodating</h4>
+          <p>We work around your schedule and treat your home with respect. No mess left behind, no attitude.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-text">
+          <h4>Reasonably Priced</h4>
+          <p>Affordable doesn't mean cutting corners — it means we don't pad bills or push work you don't need.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-stats">
+    <div class="why-stat">
+      <div class="why-stat-num">4.3</div>
+      <div class="why-stat-label">Google Rating</div>
+    </div>
+    <div class="why-stat">
+      <div class="why-stat-num">STL</div>
+      <div class="why-stat-label">Serving St. Louis & Surrounds</div>
+    </div>
+    <div class="why-stat">
+      <div class="why-stat-num">$0</div>
+      <div class="why-stat-label">Upsells or Hidden Fees</div>
+    </div>
+    <div class="why-stat">
+      <div class="why-stat-num">100%</div>
+      <div class="why-stat-label">Would Recommend</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-label">What Customers Say</div>
+      <h2 class="section-title">Real Reviews</h2>
+    </div>
+    <div class="rating-summary">
+      <div class="rating-num">4.3</div>
+      <div>
+        <div class="stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star" style="opacity:0.35">★</span>
+        </div>
+        <div class="rating-meta">on Google</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">I highly recommend Steve's plumbing. They did an excellent job diagnosing a clogged drain and were very honest and accommodated my schedule. Both Steve and his brother couldn't have been more professional with an excellent attitude.</p>
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid #e0ddd6;">
+        <div class="reviewer-header">
+          <div class="reviewer-avatar">WG</div>
+          <div>
+            <div class="reviewer-name">William Gannon</div>
+            <div class="reviewer-meta">Local Guide · 41 reviews</div>
+          </div>
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">Prompt. Reasonably priced. Very informative throughout the whole process. Chatted about other plumbing topics. He even killed a spider in my basement! Would highly recommend.</p>
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid #e0ddd6;">
+        <div class="reviewer-header">
+          <div class="reviewer-avatar" style="background: #1d3a5e;">NA</div>
+          <div>
+            <div class="reviewer-name">Nicole Anderson</div>
+            <div class="reviewer-meta">Local Guide · 12 reviews</div>
+          </div>
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">They did not clean my drains, but provided me with information about my problem. I appreciate them for the info, and it saved me a lot of money. That kind of honesty is rare.</p>
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 0.5px solid #e0ddd6;">
+        <div class="reviewer-header">
+          <div class="reviewer-avatar" style="background: #2a3f5f;">MH</div>
+          <div>
+            <div class="reviewer-name">Marvin Hardy</div>
+            <div class="reviewer-meta">Local Guide · 202 reviews</div>
+          </div>
+        </div>
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:0.35">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Ready to Fix That Drain?</h2>
+  <p class="section-body">Give us a call and we'll get it sorted. Straightforward service, fair prices, and we actually pick up the phone.</p>
+  <div class="contact-actions">
+    <a href="tel:3148823090" class="btn-dark">📞 (314) 882-3090</a>
+  </div>
+  <div class="contact-info">
+    <div class="contact-info-item">
+      <span class="ci-label">Phone</span>
+      <span class="ci-value"><a href="tel:3148823090">(314) 882-3090</a></span>
+    </div>
+    <div class="contact-info-item">
+      <span class="ci-label">Address</span>
+      <span class="ci-value">6449 Towne Woods Dr, St. Louis, MO 63129</span>
+    </div>
+    <div class="contact-info-item">
+      <span class="ci-label">Area Served</span>
+      <span class="ci-value">St. Louis & Surrounding Areas</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Steve's <span>Affordable Sewer & Drain</span></div>
+  <p>© 2025 Steve's Affordable Sewer & Drain · St. Louis, MO · (314) 882-3090</p>
+</footer>
+
+</body>
+</html>
